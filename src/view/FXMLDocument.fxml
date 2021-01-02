@@ -12,14 +12,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLMainController">
    <center>
       <VBox alignment="CENTER" spacing="35.0">
          <children>
             <Label fx:id="timeLabel" text="17:23    02/01/2021    Sabado">
                <font>
-                  <Font size="25.0" />
+                  <Font size="35.0" />
                </font>
             </Label>
             <GridPane alignment="CENTER" hgap="6.0" minHeight="-Infinity" minWidth="-Infinity" vgap="24.0" VBox.vgrow="SOMETIMES">
@@ -112,14 +111,14 @@
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" VBox.vgrow="ALWAYS">
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openSettings" VBox.vgrow="ALWAYS">
                <graphic>
                   <FontAwesomeIconView glyphName="COG" size="50" />
                </graphic>
             </Button>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" VBox.vgrow="ALWAYS">
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#powerOff" VBox.vgrow="ALWAYS">
                <graphic>
-                  <MaterialDesignIconView glyphName="CLOSE" size="50" />
+                  <FontAwesomeIconView glyphName="POWER_OFF" size="50" />
                </graphic>
             </Button>
          </children>

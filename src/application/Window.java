@@ -9,7 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 public enum Window {
-    MAIN ("/view/FXMLDocument.fxml");
+    MAIN ("/view/FXMLDocument.fxml"),
+    SETTINGS ("/view/FXMLSettings.fxml");
 
     final String rootPath;
     

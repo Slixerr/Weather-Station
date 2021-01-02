@@ -181,4 +181,8 @@ public class Model {
         // arrancamos el SentenceReader para que empieze a escuchar
         reader.start();
     }
+    
+    public void close() {
+        if (reader != null) reader.stop();
+    }
 }

@@ -5,6 +5,7 @@
  */
 package controller;
 
+import application.Window;
 import model.Model;
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,6 +30,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Stage;
 import net.sf.marineapi.nmea.event.AbstractSentenceListener;
 import net.sf.marineapi.nmea.io.SentenceReader;
 import net.sf.marineapi.nmea.sentence.HDGSentence;
@@ -42,8 +44,6 @@ import net.sf.marineapi.nmea.util.Position;
  */
 public class FXMLMainController implements Initializable {
 
-
-    private Label ficheroLabel;
     @FXML
     private Label twdLabel;
     @FXML
@@ -91,27 +91,16 @@ public class FXMLMainController implements Initializable {
         });
 
     }
+    
+    @FXML
+    private void openSettings(ActionEvent event) {
+        FXMLStartController.show(Window.SETTINGS);
+    }
 
-
-    private void cargarFichero(ActionEvent event) throws FileNotFoundException {
-        FileChooser ficheroChooser = new FileChooser();
-        String currentPath = Paths.get(".").toAbsolutePath().normalize().toString();
-        ficheroChooser.setInitialDirectory(new File(currentPath));
-        ficheroChooser.getExtensionFilters().add(new ExtensionFilter("ficheros NMEA", "*.NMEA"));
-
-        // ficheroChooser.setSelectedExtensionFilter(new ExtensionFilter("ficheros NMEA", "*.NMEA"));
-        ficheroChooser.setTitle("fichero datos NMEA");
-
-        File ficheroNMEA = ficheroChooser.showOpenDialog(ficheroLabel.getScene().getWindow());
-        if (ficheroNMEA != null) {
-            // ========================================================
-            // NO se comprueba que se trata de un fichero de datos NMEA
-            // esto es una demos
-            ficheroLabel.setText("fichero: " + ficheroNMEA.getName());
-            // ========================================================
-            // se pone en marcha el proceso para recibir tramas
-            model.addSentenceReader(ficheroNMEA);
-        }
+    @FXML
+    private void powerOff(ActionEvent event) {
+        Model.getInstance().close();
+        ((Stage) timeLabel.getScene().getWindow()).close();
     }
 }
 
