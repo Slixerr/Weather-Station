@@ -57,7 +57,11 @@
                   </Label>
                   <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Label fx:id="ficheroLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="ficheroLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
                         <VBox alignment="CENTER_RIGHT" HBox.hgrow="NEVER">
                            <children>
                               <Button fx:id="addFileButton" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" mnemonicParsing="false" onAction="#cargarFichero" prefWidth="70.0" VBox.vgrow="ALWAYS">
