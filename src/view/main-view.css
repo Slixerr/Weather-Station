@@ -13,11 +13,7 @@ and open the template in the editor.
     -fx-background-insets: 0, 0 0 3 0;
 }
 
-/*.label-title: black {
-    -fx-fill: white;
-    -fx-background-color: white, black;
-    -fx-background-insets: 0, 0 0 3 0;
-}*/
+
 
 
 
@@ -27,15 +23,9 @@ and open the template in the editor.
     -fx-background-insets: 0, 3 3 3 3;
 }
 
-/*.button: black {
-    -fx-fill: white;
-    -fx-background-color: black, #0d004c;
-    -fx-background-insets: 0, 3 3 3 3;
-}*/
 
-/*.button: black .content {
-    -fx-fill: white;
-}*/
+
+
 
 
 
@@ -51,9 +41,7 @@ and open the template in the editor.
     -fx-background-color: white;
 }
 
-/*.border-pane: black {
-    -fx-background-color: #110066;
-}*/
+
 
 
 .choice-box {
@@ -64,16 +52,12 @@ and open the template in the editor.
 
 
 
+
+
 .separator {
     -fx-background-color: grey;
     -fx-background-radius:3;
 }
 
-/*.separator: black {
-    -fx-background-color: #cccccc;
-}*/
 
 
-.line-chart {
-    
-}
