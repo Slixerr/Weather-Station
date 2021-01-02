@@ -24,9 +24,9 @@
             </Label>
             <GridPane alignment="CENTER" hgap="6.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="gridpane" vgap="12.0" VBox.vgrow="SOMETIMES">
               <columnConstraints>
-                <ColumnConstraints hgrow="NEVER" minWidth="94.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="NEVER" maxWidth="243.0" minWidth="120.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="219.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="175.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -38,7 +38,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label prefHeight="45.0" prefWidth="127.0" styleClass="label-text" text="Presión">
+                  <Label prefHeight="45.0" prefWidth="127.0" text="Presión:">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -68,7 +68,7 @@
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="47.0" prefWidth="195.0" styleClass="label-text" text="Temperatura" GridPane.rowIndex="2">
+                  <Label prefHeight="47.0" prefWidth="195.0" text="Temperatura:" GridPane.rowIndex="2">
                      <font>
                         <Font size="32.0" />
                      </font>

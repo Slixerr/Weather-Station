@@ -196,6 +196,7 @@ public class Model {
             System.out.println(e.getMessage());
         });
 
+        barometricUnit.setValue("B");
         // arrancamos el SentenceReader para que empieze a escuchar
         reader.start();
     }

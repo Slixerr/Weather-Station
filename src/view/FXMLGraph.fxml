@@ -26,12 +26,18 @@
                   <Font size="35.0" />
                </font>
             </Label>
-            <LineChart fx:id="graphLineChart" animated="false" legendVisible="false" styleClass="line-chart">
+            <LineChart fx:id="graphLineChart" animated="false" createSymbols="false" legendVisible="false">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <CategoryAxis animated="false" side="BOTTOM">
+                     <tickLabelFont>
+                        <Font size="20.0" />
+                     </tickLabelFont></CategoryAxis>
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis side="LEFT">
+                     <tickLabelFont>
+                        <Font size="20.0" />
+                     </tickLabelFont></NumberAxis>
               </yAxis>
             </LineChart>
          </children>

@@ -28,6 +28,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.util.StringConverter;
 import model.Model;
 
@@ -142,17 +143,13 @@ public class FXMLSettingsController implements Initializable {
         ficheroChooser.setInitialDirectory(new File(currentPath));
         ficheroChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("ficheros NMEA", "*.NMEA"));
 
-        // ficheroChooser.setSelectedExtensionFilter(new ExtensionFilter("ficheros NMEA", "*.NMEA"));
+        ficheroChooser.setSelectedExtensionFilter(new ExtensionFilter("ficheros NMEA", "*.NMEA"));
         ficheroChooser.setTitle("fichero datos NMEA");
 
         File ficheroNMEA = ficheroChooser.showOpenDialog(ficheroLabel.getScene().getWindow());
         if (ficheroNMEA != null) {
-            // ========================================================
-            // NO se comprueba que se trata de un fichero de datos NMEA
-            // esto es una demos
-            ficheroLabel.setText("fichero: " + ficheroNMEA.getName());
-            // ========================================================
-            // se pone en marcha el proceso para recibir tramas
+            ficheroLabel.setText(ficheroNMEA.getName());
+            
             model.addSentenceReader(ficheroNMEA);
         }
     }

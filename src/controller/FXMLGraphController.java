@@ -4,9 +4,11 @@ import application.Graph;
 import application.Window;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Label;
@@ -21,10 +23,9 @@ public class FXMLGraphController implements Initializable {
     private Label graphName;
     @FXML
     private LineChart<String, Number> graphLineChart;
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        graphLineChart.setCreateSymbols(false);
         graphName.textProperty().bind(graph.getNameProperty());
         graph.seriesSwitchedProperty().addListener(c -> {
             graphLineChart.getData().clear();
