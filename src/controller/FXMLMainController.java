@@ -5,6 +5,7 @@
  */
 package controller;
 
+import application.Graph;
 import application.Window;
 import model.Model;
 import java.io.File;
@@ -56,6 +57,8 @@ public class FXMLMainController implements Initializable {
     private Model model;
     @FXML
     private Label timeLabel;
+    
+    Graph graph = Graph.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -101,6 +104,30 @@ public class FXMLMainController implements Initializable {
     private void powerOff(ActionEvent event) {
         Model.getInstance().close();
         ((Stage) timeLabel.getScene().getWindow()).close();
+    }
+
+    @FXML
+    private void openPresionGraph(ActionEvent event) {
+        graph.setName("Presión");
+        FXMLStartController.show(Window.GRAPH);
+    }
+
+    @FXML
+    private void openTemperaturaGraph(ActionEvent event) {
+        graph.setName("Temperatura");
+        FXMLStartController.show(Window.GRAPH);
+    }
+
+    @FXML
+    private void openTwdGraph(ActionEvent event) {
+        graph.setName("TWD");
+        FXMLStartController.show(Window.GRAPH);
+    }
+
+    @FXML
+    private void openTwsGraph(ActionEvent event) {
+        graph.setName("TWS");
+        FXMLStartController.show(Window.GRAPH);
     }
 }
 

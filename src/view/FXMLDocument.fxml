@@ -74,22 +74,22 @@
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.columnIndex="2">
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openPresionGraph" GridPane.columnIndex="2">
                      <graphic>
                         <MaterialDesignIconView glyphName="CHART_LINE" size="40" />
                      </graphic>
                   </Button>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openTemperaturaGraph" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <graphic>
                         <MaterialDesignIconView glyphName="CHART_LINE" size="40" />
                      </graphic>
                   </Button>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openTwdGraph" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <graphic>
                         <MaterialDesignIconView glyphName="CHART_LINE" size="40" />
                      </graphic>
                   </Button>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openTwsGraph" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <graphic>
                         <MaterialDesignIconView glyphName="CHART_LINE" size="40" />
                      </graphic>

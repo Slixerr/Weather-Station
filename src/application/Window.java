@@ -10,7 +10,8 @@ import javafx.scene.Parent;
 
 public enum Window {
     MAIN ("/view/FXMLDocument.fxml"),
-    SETTINGS ("/view/FXMLSettings.fxml");
+    SETTINGS ("/view/FXMLSettings.fxml"),
+    GRAPH ("/view/FXMLGraph.fxml");
 
     final String rootPath;
     
