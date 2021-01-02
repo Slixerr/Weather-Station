@@ -22,7 +22,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
 import javafx.stage.FileChooser;
 import model.Model;
 
@@ -46,7 +45,8 @@ public class FXMLSettingsController implements Initializable {
     
     private Model model;
     
-    private String[] themeOptions = new String[]{"Blanco","Negro"};
+    @FXML
+    private ChoiceBox<?> intervalChoiceBox;
     
     public static enum Theme {
         BLACK ("Negro"),
@@ -87,6 +87,27 @@ public class FXMLSettingsController implements Initializable {
             return name;
         }
     }
+    
+    public static enum Interval {
+        I300 ("300"),
+        I600 ("600");
+        
+        public final String value;
+        
+        Interval(String value) {
+            this.value = value;
+        }
+        
+        public static List<Interval> listValues() {
+            return Arrays.asList(values());
+        }
+        
+        @Override
+        public String toString() {
+            return value;
+        }
+    }
+    
 
 
     @Override
@@ -98,6 +119,9 @@ public class FXMLSettingsController implements Initializable {
         
         conectionChoiceBox.setItems(FXCollections.observableList(Connection.listValues()));
         conectionChoiceBox.setValue(Connection.FICHERO);
+        
+        intervalChoiceBox.setItems(FXCollections.observableList(Interval.listValues()));
+        intervalChoiceBox.setValue(Interval.I300);
         
         BooleanBinding connectionBinding = Bindings.notEqual(conectionChoiceBox.valueProperty(), Connection.FICHERO);
         fileLabel.disableProperty().bind(connectionBinding);
@@ -131,4 +155,6 @@ public class FXMLSettingsController implements Initializable {
             model.addSentenceReader(ficheroNMEA);
         }
     }
+    
+    
 }

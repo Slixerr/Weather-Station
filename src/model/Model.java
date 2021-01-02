@@ -18,15 +18,11 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 import net.sf.marineapi.nmea.event.AbstractSentenceListener;
-import net.sf.marineapi.nmea.io.ExceptionListener;
 import net.sf.marineapi.nmea.io.SentenceReader;
-import net.sf.marineapi.nmea.sentence.HDGSentence;
 import net.sf.marineapi.nmea.sentence.MDASentence;
-import net.sf.marineapi.nmea.sentence.MWVSentence;
 
 /**
  *

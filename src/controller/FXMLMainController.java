@@ -8,36 +8,14 @@ package controller;
 import application.Graph;
 import application.Window;
 import model.Model;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
-import java.nio.file.Paths;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Platform;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.LineChart;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.stage.FileChooser;
-import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
-import net.sf.marineapi.nmea.event.AbstractSentenceListener;
-import net.sf.marineapi.nmea.io.SentenceReader;
-import net.sf.marineapi.nmea.sentence.HDGSentence;
-import net.sf.marineapi.nmea.sentence.MDASentence;
-import net.sf.marineapi.nmea.sentence.MWVSentence;
-import net.sf.marineapi.nmea.util.Position;
 
 /**
  *
