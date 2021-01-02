@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package demoestacion;
+package controller;
 
 import model.Model;
 import java.io.File;
@@ -40,7 +40,7 @@ import net.sf.marineapi.nmea.util.Position;
  *
  * @author jsoler
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLMainController implements Initializable {
 
 
     private Label ficheroLabel;
@@ -99,7 +99,7 @@ public class FXMLDocumentController implements Initializable {
         ficheroChooser.setInitialDirectory(new File(currentPath));
         ficheroChooser.getExtensionFilters().add(new ExtensionFilter("ficheros NMEA", "*.NMEA"));
 
-//        ficheroChooser.setSelectedExtensionFilter(new ExtensionFilter("ficheros NMEA", "*.NMEA"));
+        // ficheroChooser.setSelectedExtensionFilter(new ExtensionFilter("ficheros NMEA", "*.NMEA"));
         ficheroChooser.setTitle("fichero datos NMEA");
 
         File ficheroNMEA = ficheroChooser.showOpenDialog(ficheroLabel.getScene().getWindow());

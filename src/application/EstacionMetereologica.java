@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package demoestacion;
+package application;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -17,11 +17,11 @@ import javafx.stage.StageStyle;
  *
  * @author jsoler
  */
-public class DemoNMEA extends Application {
+public class EstacionMetereologica extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLStart.fxml"));
         
         Scene scene = new Scene(root);
   
