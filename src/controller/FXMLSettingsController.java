@@ -5,6 +5,7 @@
  */
 package controller;
 
+import application.EstacionMetereologica;
 import application.IntegerSecondsConverter;
 import application.Window;
 import java.io.File;
@@ -49,8 +50,6 @@ public class FXMLSettingsController implements Initializable {
     private ChoiceBox<Connection> conectionChoiceBox;
     
     private Model model;
-    
-    public static final PseudoClass BLACK_PSEUDO_CLASS = PseudoClass.getPseudoClass("black");
     
     @FXML
     private ChoiceBox<Integer> intervalChoiceBox;
@@ -120,7 +119,15 @@ public class FXMLSettingsController implements Initializable {
         ficheroLabel.disableProperty().bind(connectionBinding);
         addFileButton.disableProperty().bind(connectionBinding);
         
-        addFileButton.getParent().getParent().pseudoClassStateChanged(BLACK_PSEUDO_CLASS, true);
+        themeChoiceBox.valueProperty().addListener((a,b,c) -> {
+            if (c.equals(Theme.WHITE)) {
+                EstacionMetereologica.mainScene.getStylesheets().add("/view/main-view.css");
+                EstacionMetereologica.mainScene.getStylesheets().remove("/view/dark-view.css");
+            } else {
+                EstacionMetereologica.mainScene.getStylesheets().remove("/view/main-view.css");
+                EstacionMetereologica.mainScene.getStylesheets().add("/view/dark-view.css");
+            }
+        });
     }    
 
     @FXML

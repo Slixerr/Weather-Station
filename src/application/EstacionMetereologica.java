@@ -20,11 +20,17 @@ import model.Model;
  */
 public class EstacionMetereologica extends Application {
     
+    public static Scene mainScene;
+    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLStart.fxml"));
         
         Scene scene = new Scene(root);
+        
+        setScene(scene);
+        
+        EstacionMetereologica.mainScene.getStylesheets().add("/view/main-view.css");
   
         stage.setScene(scene);
         stage.setHeight(480);
@@ -35,6 +41,10 @@ public class EstacionMetereologica extends Application {
             System.exit(0);
         });
 
+    }
+    
+    static void setScene(Scene scene) {
+        mainScene = scene;
     }
 
     /**
