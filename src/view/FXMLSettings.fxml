@@ -85,7 +85,7 @@
                   </HBox>
                   <ChoiceBox fx:id="themeChoiceBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
                   <ChoiceBox fx:id="conectionChoiceBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Label text="Intervalo Datos:" GridPane.rowIndex="2">
+                  <Label styleClass="label-text" text="Intervalo Datos:" GridPane.rowIndex="2">
                      <font>
                         <Font size="32.0" />
                      </font>

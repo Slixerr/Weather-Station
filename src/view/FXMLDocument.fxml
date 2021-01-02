@@ -38,7 +38,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label prefHeight="45.0" prefWidth="127.0" text="Presión:">
+                  <Label prefHeight="45.0" prefWidth="127.0" styleClass="label-text" text="Presión:">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -68,7 +68,7 @@
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="47.0" prefWidth="195.0" text="Temperatura:" GridPane.rowIndex="2">
+                  <Label prefHeight="47.0" prefWidth="195.0" styleClass="label-text" text="Temperatura:" GridPane.rowIndex="2">
                      <font>
                         <Font size="32.0" />
                      </font>
