@@ -8,24 +8,33 @@ and open the template in the editor.
     Author     : danie
 */
 
-.button:white {
-    
-}
-
-.button:black {
-    -fx-fill: white;
-}
-
-.button:black .content {
-    -fx-fill: white;
+.label-title {
+    -fx-background-color: black, white;
+    -fx-background-insets: 0, 0 0 3 0;
 }
 
 
-.line-graph:white {
-    
+.button {
+    -fx-background-color: black, #cccccc;
+    -fx-background-insets: 0, 3 3 3 3;
 }
 
-.line-graph:black {
-    
+.text-label {
+    -fx-background-color: black, #ededed;
+    -fx-background-insets: 0, 3 3 3 3;
 }
 
+
+
+.border-pane {
+    -fx-background-color: white;
+}
+
+.gridpane .first-row {
+     -fx-border-width: 0 1 1 1 ;
+}
+
+.separator {
+    -fx-background-color: grey;
+    -fx-background-radius:3;
+}
