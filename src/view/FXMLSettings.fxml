@@ -65,6 +65,12 @@
                            <font>
                               <Font size="19.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
                         </Label>
                         <VBox alignment="CENTER_RIGHT" HBox.hgrow="NEVER">
                            <children>

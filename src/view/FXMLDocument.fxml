@@ -53,17 +53,17 @@
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Label fx:id="presionLabel" text="---" textFill="#39b5a6" GridPane.columnIndex="1">
+                  <Label fx:id="presionLabel" text="---" textFill="ORANGE" GridPane.columnIndex="1">
                      <font>
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Label fx:id="twdLabel" text="---º" textFill="#39b5a6" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Label fx:id="twdLabel" text="---º" textFill="ORANGE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Label fx:id="twsLabel" text="--.-- Kn" textFill="#39b5a6" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <Label fx:id="twsLabel" text="--.-- Kn" textFill="ORANGE" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -73,7 +73,7 @@
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Label fx:id="tempLabel" text="---º" textFill="#39b5a6" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="tempLabel" text="---º" textFill="ORANGE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="32.0" />
                      </font>

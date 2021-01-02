@@ -19,6 +19,7 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -48,6 +49,8 @@ public class FXMLSettingsController implements Initializable {
     private ChoiceBox<Connection> conectionChoiceBox;
     
     private Model model;
+    
+    public static final PseudoClass BLACK_PSEUDO_CLASS = PseudoClass.getPseudoClass("black");
     
     @FXML
     private ChoiceBox<Integer> intervalChoiceBox;
@@ -104,11 +107,11 @@ public class FXMLSettingsController implements Initializable {
         
         intervalChoiceBox.setConverter(new IntegerSecondsConverter());
         ObservableList<Integer> times = FXCollections.observableArrayList();
-        for (int i = 0; i <= 600; i += 60) {
+        for (int i = 300; i <= 600; i += 60) {
             times.add(i);
         }
         intervalChoiceBox.setItems(times);
-        intervalChoiceBox.setValue(60);
+        intervalChoiceBox.setValue(300);
         
         model.sizeDataWindChartProperty().bind(intervalChoiceBox.valueProperty());
         
@@ -116,6 +119,8 @@ public class FXMLSettingsController implements Initializable {
         fileLabel.disableProperty().bind(connectionBinding);
         ficheroLabel.disableProperty().bind(connectionBinding);
         addFileButton.disableProperty().bind(connectionBinding);
+        
+        addFileButton.getParent().getParent().pseudoClassStateChanged(BLACK_PSEUDO_CLASS, true);
     }    
 
     @FXML

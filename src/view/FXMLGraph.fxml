@@ -26,7 +26,7 @@
                   <Font size="35.0" />
                </font>
             </Label>
-            <LineChart fx:id="graphLineChart">
+            <LineChart fx:id="graphLineChart" animated="false" legendVisible="false">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
