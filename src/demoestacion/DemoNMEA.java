@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -25,6 +26,9 @@ public class DemoNMEA extends Application {
         Scene scene = new Scene(root);
   
         stage.setScene(scene);
+        stage.setHeight(480);
+        stage.setWidth(800);
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
         stage.setOnCloseRequest(e->{
             System.exit(0);
