@@ -4,8 +4,14 @@ import application.Graph;
 import application.Window;
 import model.Model;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,6 +34,9 @@ public class FXMLMainController implements Initializable {
     private Label timeLabel;
     
     Graph graph = Graph.getInstance();
+    
+    private Thread hilo;
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -61,7 +70,12 @@ public class FXMLMainController implements Initializable {
                 twsLabel.setText(dat);
             });
         });
-
+        
+        
+        MiTask miTask = new MiTask();
+        hilo = new Thread(miTask);
+        hilo.setDaemon(true);
+        hilo.start();
     }
     
     @FXML
@@ -71,6 +85,7 @@ public class FXMLMainController implements Initializable {
 
     @FXML
     private void powerOff(ActionEvent event) {
+        hilo.stop();
         Model.getInstance().close();
         ((Stage) timeLabel.getScene().getWindow()).close();
     }
@@ -102,5 +117,26 @@ public class FXMLMainController implements Initializable {
         graph.setSeries(model.getTWSSerie());
         FXMLStartController.show(Window.GRAPH);
     }
-}
+    
 
+
+
+
+class MiTask extends Task<Void> { //medoto copiado de clase y readaptado
+
+    @Override
+    protected Void call() throws Exception {
+        while(true) {
+            Platform.runLater(() -> {
+                timeLabel.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss   dd-MM-yyyy   E")));
+            
+                });
+            Thread.sleep(1000);
+            if (isCancelled()) {
+                break;
+            }
+        }
+        return null;
+    }
+    
+}}
