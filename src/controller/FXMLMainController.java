@@ -121,12 +121,15 @@ public class FXMLMainController implements Initializable {
     @FXML
     private void openTwdGraph(ActionEvent event) {
         graph.setName("TWD");
+        graph.setData(model.getTWDSerie().getData());
         FXMLStartController.show(Window.GRAPH);
     }
 
     @FXML
     private void openTwsGraph(ActionEvent event) {
         graph.setName("TWS");
+        System.out.println(model.getTWSSerie().getData().size());
+        graph.setData(model.getTWSSerie().getData());
         FXMLStartController.show(Window.GRAPH);
     }
 }

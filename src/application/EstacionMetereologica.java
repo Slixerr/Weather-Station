@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.Model;
 
 /**
  *
@@ -40,6 +41,7 @@ public class EstacionMetereologica extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Model.getInstance().sizeDataWindChartProperty().setValue(300);
         launch(args);
     }
     
