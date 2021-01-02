@@ -1,0 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2 ene. 2021, 21:01:47
+    Author     : silvi
+*/
+
+.label-title {
+    -fx-fill: white;
+    -fx-background-color: white, black;
+    -fx-background-insets: 0, 0 0 3 0;
+}
+
+.button {
+    -fx-fill: white;
+    -fx-background-color: black, #0d004c;
+    -fx-background-insets: 0, 3 3 3 3;
+}
+
+.button .content {
+    -fx-fill: white;
+}
+
+.border-pane {
+    -fx-background-color: #110066;
+}
+
+.choice-box {
+    -fx-background-color: black, #0d004c;
+    -fx-background-insets: 0, 3 3 3 3;
+}
+
+.line-chart {
+    -fx-tick-label-fill: white;
+}
