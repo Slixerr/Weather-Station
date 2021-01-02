@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="800.0" stylesheets="@main-view.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLSettingsController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="800.0" styleClass="border-pane" stylesheets="@main-view.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLSettingsController">
    <center>
       <VBox alignment="CENTER" spacing="35.0">
          <padding>
@@ -24,7 +24,7 @@
             <Insets top="20.0" />
          </BorderPane.margin>
          <children>
-            <Label text="Configuración">
+            <Label styleClass="label-title" text="Configuración">
                <font>
                   <Font size="35.0" />
                </font>
@@ -61,7 +61,7 @@
                   </Label>
                   <HBox GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <children>
-                        <Label fx:id="ficheroLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                        <Label fx:id="ficheroLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="text-label" HBox.hgrow="ALWAYS">
                            <font>
                               <Font size="19.0" />
                            </font>
