@@ -5,17 +5,20 @@
  */
 package controller;
 
+import application.IntegerSecondsConverter;
 import application.Window;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,6 +26,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
+import javafx.util.StringConverter;
 import model.Model;
 
 /**
@@ -46,7 +50,7 @@ public class FXMLSettingsController implements Initializable {
     private Model model;
     
     @FXML
-    private ChoiceBox<?> intervalChoiceBox;
+    private ChoiceBox<Integer> intervalChoiceBox;
     
     public static enum Theme {
         BLACK ("Negro"),
@@ -87,28 +91,6 @@ public class FXMLSettingsController implements Initializable {
             return name;
         }
     }
-    
-    public static enum Interval {
-        I300 ("300"),
-        I600 ("600");
-        
-        public final String value;
-        
-        Interval(String value) {
-            this.value = value;
-        }
-        
-        public static List<Interval> listValues() {
-            return Arrays.asList(values());
-        }
-        
-        @Override
-        public String toString() {
-            return value;
-        }
-    }
-    
-
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -120,8 +102,15 @@ public class FXMLSettingsController implements Initializable {
         conectionChoiceBox.setItems(FXCollections.observableList(Connection.listValues()));
         conectionChoiceBox.setValue(Connection.FICHERO);
         
-        intervalChoiceBox.setItems(FXCollections.observableList(Interval.listValues()));
-        intervalChoiceBox.setValue(Interval.I300);
+        intervalChoiceBox.setConverter(new IntegerSecondsConverter());
+        ObservableList<Integer> times = FXCollections.observableArrayList();
+        for (int i = 0; i <= 600; i += 60) {
+            times.add(i);
+        }
+        intervalChoiceBox.setItems(times);
+        intervalChoiceBox.setValue(60);
+        
+        model.sizeDataWindChartProperty().bind(intervalChoiceBox.valueProperty());
         
         BooleanBinding connectionBinding = Bindings.notEqual(conectionChoiceBox.valueProperty(), Connection.FICHERO);
         fileLabel.disableProperty().bind(connectionBinding);
@@ -155,6 +144,4 @@ public class FXMLSettingsController implements Initializable {
             model.addSentenceReader(ficheroNMEA);
         }
     }
-    
-    
 }

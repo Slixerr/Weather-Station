@@ -87,27 +87,28 @@ public class FXMLMainController implements Initializable {
     @FXML
     private void openPresionGraph(ActionEvent event) {
         graph.setName("Presión");
+        graph.setSeries(model.getBPSerie());
         FXMLStartController.show(Window.GRAPH);
     }
 
     @FXML
     private void openTemperaturaGraph(ActionEvent event) {
         graph.setName("Temperatura");
+        graph.setSeries(model.getTEMPSerie());
         FXMLStartController.show(Window.GRAPH);
     }
 
     @FXML
     private void openTwdGraph(ActionEvent event) {
         graph.setName("TWD");
-        graph.setData(model.getTWDSerie().getData());
+        graph.setSeries(model.getTWDSerie());
         FXMLStartController.show(Window.GRAPH);
     }
 
     @FXML
     private void openTwsGraph(ActionEvent event) {
         graph.setName("TWS");
-        System.out.println(model.getTWSSerie().getData().size());
-        graph.setData(model.getTWSSerie().getData());
+        graph.setSeries(model.getTWSSerie());
         FXMLStartController.show(Window.GRAPH);
     }
 }

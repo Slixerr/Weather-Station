@@ -12,6 +12,7 @@ import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -111,6 +112,21 @@ public class Model {
         return TWSSerie;
     }
     private ObservableList<XYChart.Data<String, Number>> TWSList = TWSSerie.getData();
+    
+    private XYChart.Series<String, Number> TEMPSerie = new XYChart.Series<>();
+
+    public XYChart.Series<String, Number> getTEMPSerie() {
+        return TEMPSerie;
+    }
+    private ObservableList<XYChart.Data<String, Number>> TEMPList = TEMPSerie.getData();
+    
+    
+    private XYChart.Series<String, Number> BPSerie = new XYChart.Series<>();
+
+    public XYChart.Series<String, Number> getBPSerie() {
+        return BPSerie;
+    }
+    private ObservableList<XYChart.Data<String, Number>> BPList = BPSerie.getData();
 
     // tamanyo de la lista de valores a mostrar en las graficas del viento
     private final IntegerProperty sizeDataWindChart = new SimpleIntegerProperty();
@@ -143,12 +159,18 @@ public class Model {
 
             //=================================================================
             // anyadimos el dato del viento a su respectiva lista y gestionamos el tamaño
-            TWDList.add(new XYChart.Data<>(LocalDateTime.now().format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)), TWD.get()));
-            TWSList.add(new XYChart.Data<>(LocalDateTime.now().format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)), TWS.get()));
-            while (TWDList.size() > sizeDataWindChart.intValue()) {
-                TWDList.remove(0);
-                TWSList.remove(0);
-            }
+            Platform.runLater(()-> TEMPList.add(new XYChart.Data<>(LocalDateTime.now().format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)), TEMP.get())));
+            Platform.runLater(()-> BPList.add(new XYChart.Data<>(LocalDateTime.now().format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)), barometricPressure.get())));
+            Platform.runLater(()-> TWDList.add(new XYChart.Data<>(LocalDateTime.now().format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)), TWD.get())));
+            Platform.runLater(()-> TWSList.add(new XYChart.Data<>(LocalDateTime.now().format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)), TWS.get())));
+            Platform.runLater(()-> {
+                while (TWDList.size() > sizeDataWindChart.intValue()) {
+                    TWDList.remove(0);
+                    TWSList.remove(0);
+                    BPList.remove(0);
+                    TEMPList.remove(0);
+                }
+            });
             //================================================================
         }
     }

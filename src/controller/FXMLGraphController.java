@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Label;
+import model.Model;
 
 
 public class FXMLGraphController implements Initializable {
@@ -25,7 +26,10 @@ public class FXMLGraphController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         graphLineChart.setCreateSymbols(false);
         graphName.textProperty().bind(graph.getNameProperty());
-        graphLineChart.getData().add(new Series(graph.getData()));
+        graph.seriesSwitchedProperty().addListener(c -> {
+            graphLineChart.getData().clear();
+            graphLineChart.getData().add(graph.getSeries());
+        });
     }
 
     @FXML

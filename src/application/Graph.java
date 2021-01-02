@@ -1,6 +1,11 @@
 package application;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -14,8 +19,8 @@ import model.Model;
 
 public class Graph {
     final StringProperty nameProperty = new SimpleStringProperty();
-    final ObservableList<Data<String, Number>> data = FXCollections.observableArrayList();
-    ObservableList<Data<String, Number>> pastData = FXCollections.observableArrayList();
+    final BooleanProperty dataSwitchProperty = new SimpleBooleanProperty();
+    Series series = new Series();
     
     private static final Graph graph = new Graph();
     
@@ -33,25 +38,20 @@ public class Graph {
         return nameProperty;
     }
 
-    public ObservableList<Data<String, Number>> getData() {
-        return data;
+    public Series getSeries() {
+        return series;
     }
     
     public void setName(String name) {
         nameProperty.setValue(name);
     }
     
-    public void setData(ObservableList<Data<String, Number>> data) {
-        ListChangeListener<? super Data<String, Number>> changeListener = (Change<? extends Data<String, Number>> c) -> {
-            while (c.next()) {
-                c.getRemoved().forEach(this.data::remove);
-                c.getAddedSubList().forEach(this.data::add);
-            }
-        };
-        pastData.removeListener(changeListener);
-        pastData = data;
-        this.data.clear();
-        this.data.addAll(data);
-        data.addListener(changeListener);
+    public void setSeries(Series series) {
+        this.series = series;
+        dataSwitchProperty.setValue(!dataSwitchProperty.getValue());
+    }
+    
+    public BooleanProperty seriesSwitchedProperty() {
+        return dataSwitchProperty;
     }
 }
