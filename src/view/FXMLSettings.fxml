@@ -44,17 +44,17 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label prefHeight="45.0" text="Visualización:">
+                  <Label prefHeight="45.0" styleClass="label-text" text="Visualización:">
                      <font>
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="47.0" prefWidth="195.0" text="Conexión:" GridPane.rowIndex="4">
+                  <Label prefHeight="47.0" prefWidth="195.0" styleClass="label-text" text="Conexión:" GridPane.rowIndex="4">
                      <font>
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Label fx:id="fileLabel" text="Fichero:" GridPane.rowIndex="6">
+                  <Label fx:id="fileLabel" styleClass="label-text" text="Fichero:" GridPane.rowIndex="6">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -85,7 +85,7 @@
                   </HBox>
                   <ChoiceBox fx:id="themeChoiceBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
                   <ChoiceBox fx:id="conectionChoiceBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Label text="Intérvalo Datos" GridPane.rowIndex="2">
+                  <Label styleClass="label-text" text="Intérvalo Datos" GridPane.rowIndex="2">
                      <font>
                         <Font size="32.0" />
                      </font>

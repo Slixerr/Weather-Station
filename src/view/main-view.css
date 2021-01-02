@@ -1,6 +1,10 @@
+.label-text {
+    -fx-text-fill: black;
+}
+
 .label-title {
-    -fx-background-color: black, white;
-    -fx-background-insets: 0, 0 0 3 0;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: black;
 }
 
 .button {
@@ -8,6 +12,9 @@
     -fx-background-insets: 0, 3 3 3 3;
 }
 
+.button:pressed {
+    -fx-background-color: black, #808080;
+}
 
 .text-label {
     -fx-background-color: black, #ededed;
