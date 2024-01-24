@@ -15,7 +15,7 @@ The accomplished functionalities include:
 5. Turn off and on the machine
 
 ## Project status
-The project has already been submitted to the teacher and received a grade of 10. Many useful functionalities can still be implemented to enhance the application and provide a more complete experience. Feel free to download the code and experiment with it.
+The project has already been submitted to the teacher and received a grade of 9.5. Many useful functionalities can still be implemented to enhance the application and provide a more complete experience. Feel free to download the code and experiment with it.
 
 ## Tools and Lenguages used
 
