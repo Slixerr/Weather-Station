@@ -2,7 +2,7 @@
 
 ## App Description
 
-This project involves the development of a calendar application for a university assignment in IPC (Human-Computer Interface). The purpose is to create a control panel for a meteorology machine.
+This project involves the development of a calendar application for a university assignment in IPC (Human-Computer Interface). The purpose is to create a control panel for a weather machine.
 The primary language used is Java, and the project has been developed in collaboration with a classmate.
 
 If you want to see similar projects as this one, you can view my profile and access the Calendar App.
