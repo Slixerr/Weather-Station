@@ -19,8 +19,9 @@ The project has already been submitted to the teacher and received a grade of 10
 ## Tools and Lenguages used
 
 Languages: Java, HTML, and CSS.
+
 Tools: Visual Studio and Scene Builder (for the interface).
 
 ## Run application
 
-his project does not have an .exe file for running the application, as it was not within the scope of the assignment. You can download all the necessary tools, such as Visual Studio, and run the program.
+This project does not have an .exe file for running the application, as it was not within the scope of the assignment. You can download all the necessary tools, such as Visual Studio, and run the program.
