@@ -12,6 +12,7 @@ The accomplished functionalities include:
 2. Possibility to see graphs of the different variables.
 3. Highlight variables when get abnormal or extreme values.
 4. Configuration panel for night view mode and changing system of measurement (ºC to F)
+5. Turn off and on the machine
 
 ## Project status
 The project has already been submitted to the teacher and received a grade of 10. Many useful functionalities can still be implemented to enhance the application and provide a more complete experience. Feel free to download the code and experiment with it.
